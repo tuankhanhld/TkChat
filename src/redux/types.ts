@@ -1,5 +1,7 @@
 export type AppState = {
   userInfo: UserInfoState;
+  toggleSpinner: LoadingState;
+  changeLanguage: LocalizedState;
 };
 
 // types for user authentication
@@ -37,3 +39,23 @@ export type AuthenAction =
   | LoginUserAction
   | LogOutUserAction
   | AuthenErrorAction;
+
+// for loading spinner
+export type LoadingState = {
+  isShowLoading: boolean;
+};
+
+export type LoadingSpinnerAction = {
+  type: string;
+  isShow: boolean;
+};
+
+// types for i18n localize
+export type LocalizedState = {
+  activeLanguage: string;
+};
+
+export type ChangeLanguageAction = {
+  type: string;
+  language: string;
+};
