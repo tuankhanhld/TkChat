@@ -4,8 +4,9 @@ export const WHITE = '#FFFFFF';
 export const BLACK = '#000000';
 export const BLACK_DARK = '#242323';
 export const DARK_RED = '#D62554';
-export const ACTIVE_ITEM = '#4a4a4a'
-export const BLUE = '#32bfee'
+export const ACTIVE_ITEM = '#4a4a4a';
+export const BLUE = '#3E70B7';
+export const ORANGE = '#F2673A';
 // ACTIONS
 export const SUCCESS = '#3adb76';
 export const WARNING = '#ffae00';
@@ -28,7 +29,7 @@ export const CALENDAR_TAB_ACTIVE = '#2e526c';
 export const CALENDAR_EVENT_ITEM = '#ffdbba';
 export const CALENDAR_VIEW_MORE_ITEM = '#2b8386';
 export const CALENDAR_HIGHT_LIGHT_DAY = '#a5edef';
-export const CALENDAR_CELL_BORDER= '#afb8b8';
+export const CALENDAR_CELL_BORDER = '#afb8b8';
 export const CALENDAR_TEXT_ACTIVE_DAY = '#117ed0';
 //BUTTON
 export const CANCEL_BTN = '#596c80';

@@ -6,11 +6,11 @@ import {LocalizedState} from '../../../redux/types';
 import I18n from 'i18n-js';
 
 interface RootState {
-  changeLanguageReducer: LocalizedState;
+  changeLanguage: LocalizedState;
 }
 //map state to prop
 const mapStateToProp = (state: RootState) => ({
-  changeLanguageReducer: state.changeLanguageReducer,
+  changeLanguage: state.changeLanguage,
 });
 
 const connector = connect(mapStateToProp, {});
@@ -34,13 +34,13 @@ class AppText extends React.Component<Props, State> {
     super(props);
     this.state = {
       i18n: I18n,
-      lang: this.props.changeLanguageReducer.activeLanguage,
+      lang: this.props.changeLanguage.activeLanguage,
     };
   }
   static getDerivedStateFromProps(props: Props, state: State) {
-    if (props.changeLanguageReducer.activeLanguage !== state.lang) {
+    if (props.changeLanguage.activeLanguage !== state.lang) {
       return {
-        lang: props.changeLanguageReducer.activeLanguage,
+        lang: props.changeLanguage.activeLanguage,
       };
     }
     // Return null to indicate no change to state.

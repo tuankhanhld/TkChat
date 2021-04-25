@@ -167,7 +167,7 @@ export class SingleSelect extends React.Component<Prop, State> {
             width,
             height,
             px,
-            py: py + 40,
+            py: py + 60,
           };
           const {measure} = this.state;
           const isNotChangePosition =
@@ -261,7 +261,12 @@ export class SingleSelect extends React.Component<Prop, State> {
                 {this.props.data.length > 0 && (
                   <View style={styles.listItemContainer}>
                     <FlatList
-                      style={{height: 200}}
+                      style={{
+                        height:
+                          this.props.data.length < 5
+                            ? this.props.data.length * 40
+                            : 200,
+                      }}
                       data={this.state.data}
                       initialNumToRender={4}
                       renderItem={({item}) => this.renderItem(item)}
@@ -280,15 +285,19 @@ export class SingleSelect extends React.Component<Prop, State> {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
+  container: {},
   selectedItemContainer: {
     marginBottom: 5,
-    height: 40,
+    height: 50,
     paddingHorizontal: 10,
     justifyContent: 'center',
-    borderWidth: 0.5,
+    shadowOffset: {width: 0, height: 3},
+    shadowColor: 'black',
+    shadowOpacity: 0.27,
+    elevation: 3,
+    width: '100%',
+    backgroundColor: Colors.WHITE,
+    borderRadius: 27,
   },
   disabledItemContainer: {
     opacity: 0.6,
@@ -297,10 +306,12 @@ const styles = StyleSheet.create({
   dropDownContainer: {
     position: 'absolute',
     padding: 10,
-    borderLeftWidth: 0.5,
-    borderRightWidth: 0.5,
-    borderBottomWidth: 0.5,
     backgroundColor: '#fff',
+    shadowOffset: {width: 0, height: 3},
+    shadowColor: 'black',
+    shadowOpacity: 0.27,
+    elevation: 3,
+    borderRadius: 20,
   },
   listItemContainer: {
     flex: 1,
@@ -311,12 +322,12 @@ const styles = StyleSheet.create({
   },
   textItem: {
     fontFamily: Typography.FONT_ROBOTO,
-    color: Colors.TEXT_TITLE,
+    color: Colors.BLACK,
   },
   iconClear: {
     fontSize: 26,
     position: 'absolute',
-    right: 20,
-    color: Colors.TEXT_TITLE,
+    right: 8,
+    color: Colors.BLACK,
   },
 });

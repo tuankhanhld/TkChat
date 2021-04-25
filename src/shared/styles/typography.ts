@@ -1,6 +1,5 @@
-import { scaleFont } from './mixins';
-import {TextStyle} from "react-native";
-import {Colors} from "./index";
+import {scaleFont} from './mixins';
+import {TextStyle} from 'react-native';
 
 // FONT FAMILY
 export const FONT_FAMILY_REGULAR = 'OpenSans-Regular';
@@ -29,12 +28,12 @@ export const LINE_HEIGHT_20 = scaleFont(20);
 export const LINE_HEIGHT_16 = scaleFont(16);
 
 // FONT STYLE
-export const FONT_REGULAR = {
-    fontFamily: FONT_FAMILY_REGULAR,
-    fontWeight: FONT_WEIGHT_REGULAR,
+export const FONT_REGULAR: TextStyle = {
+  fontFamily: FONT_ROBOTO,
+  fontWeight: FONT_WEIGHT_REGULAR,
 };
 
-export const FONT_BOLD = {
-    fontFamily: FONT_FAMILY_BOLD,
-    fontWeight: FONT_WEIGHT_BOLD,
+export const FONT_BOLD: TextStyle = {
+  fontFamily: FONT_ROBOTO,
+  fontWeight: FONT_WEIGHT_BOLD,
 };
