@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
 import {Mixins} from '../../../shared/styles';
 
-export const loginStyles = StyleSheet.create({
+export const codeVerifyStyles = StyleSheet.create({
   container: {
     flexDirection: 'column',
     paddingVertical: 10,
@@ -33,4 +33,24 @@ export const loginStyles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-end',
   },
+
+  cell: {
+    width: 50,
+    height: 50,
+    lineHeight: 38,
+    fontSize: 24,
+    borderWidth: 1,
+    borderColor: '#00000030',
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    shadowOffset: {width: 0, height: 3},
+    shadowColor: 'black',
+    shadowOpacity: 0.27,
+    elevation: 3,
+    borderRadius: 5,
+  },
+  focusCell: {
+    borderColor: '#000',
+  },
+  codeFieldRoot: {marginTop: 20, flex: 1, justifyContent: 'space-around'},
 });

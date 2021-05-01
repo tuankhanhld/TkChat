@@ -1,11 +1,13 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {Dimensions, StyleSheet, View} from 'react-native';
 import {Mixins} from './src/shared/styles';
 import {Provider} from 'react-redux';
 import {store} from './src/redux/store';
 import {StyleProvider} from 'native-base';
+// @ts-ignore
 import getTheme from './native-base-theme/components';
-import material from './native-base-theme/variables/material';
+// @ts-ignore
+import material from './native-base-theme/variables/platform';
 import {NavigationContainer} from '@react-navigation/native';
 import AppRootStack from './src/navigatiors/AppRootStack';
 
@@ -27,11 +29,14 @@ export class App extends React.Component {
 
 // styles
 
+const width = Dimensions.get('window').width;
+const height = Dimensions.get('window').height;
+
 const styles = StyleSheet.create({
   root: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    flex: 1,
+    width,
+    height,
+    backgroundColor: 'white',
   },
   textTitle: {
     fontSize: Mixins.scaleFont(30),

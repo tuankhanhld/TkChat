@@ -321,7 +321,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   textItem: {
-    fontFamily: Typography.FONT_ROBOTO,
+    fontFamily: Typography.POPPINS_REGULAR,
     color: Colors.BLACK,
   },
   iconClear: {

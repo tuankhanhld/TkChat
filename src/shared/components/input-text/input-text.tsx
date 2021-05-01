@@ -1,6 +1,6 @@
-import {Icon, Input, Item} from 'native-base';
-import {StyleSheet, ViewStyle} from 'react-native';
-import {Colors} from '../../styles';
+import {Icon, Input} from 'native-base';
+import {StyleSheet, View, ViewStyle} from 'react-native';
+import {Colors, Typography} from '../../styles';
 import React, {useState} from 'react';
 type Props = {
   value?: string;
@@ -26,43 +26,44 @@ export default function InputText({
   };
 
   return showValidateIcon ? (
-    <Item
-      style={styles.item}
-      rounded
-      success={innerValue !== null && innerValue !== ''}>
+    <View style={{width: '100%', height: 50, justifyContent: 'center'}}>
       <Input
+        placeholder={placeholder}
         onChangeText={onTextChange}
         style={[styles.input, style]}
-        placeholder={placeholder}
       />
-      <Icon name="checkmark-circle" />
-    </Item>
+      <Icon
+        name="checkmark-circle"
+        style={[styles.icon, {color: innerValue ? 'green' : 'black'}]}
+      />
+    </View>
   ) : (
-    <Item style={styles.item} rounded>
-      <Input
-        onChangeText={onTextChange}
-        style={[styles.input, style]}
-        value={value}
-        placeholder={placeholder}
-      />
-    </Item>
+    <Input
+      placeholder={placeholder}
+      onChangeText={onTextChange}
+      style={styles.input}
+    />
   );
 }
 
 const styles = StyleSheet.create({
-  item: {
+  input: {
     shadowOffset: {width: 0, height: 3},
     shadowColor: 'black',
     shadowOpacity: 0.27,
     elevation: 3,
     width: '100%',
-    height: 50,
+    minHeight: 50,
+    maxHeight: 50,
     borderColor: Colors.WHITE,
     backgroundColor: Colors.WHITE,
-  },
-  input: {
-    borderRadius: 20,
+    borderRadius: 50,
     paddingLeft: 20,
     paddingRight: 10,
+    fontFamily: Typography.POPPINS_REGULAR,
+  },
+  icon: {
+    position: 'absolute',
+    right: 10,
   },
 });

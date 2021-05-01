@@ -9,6 +9,12 @@ export const AIA_BODY_BOLD = 'AIA-BodyBold';
 export const AIA_BODY = 'AIA-Body';
 export const AIA_HEADING = 'AIA-Heading';
 export const AIA_EVEREST_BETA = 'AIA Everest Beta';
+
+export const POPPINS_BOLD = 'Poppins-Bold';
+export const POPPINS_LIGHT = 'Poppins-Light';
+export const POPPINS_MEDIUM = 'Poppins-Medium';
+export const POPPINS_REGULAR = 'Poppins-Regular';
+export const POPPINS_ITALIC = 'Poppins-Italic';
 // FONT WEIGHT
 export const FONT_WEIGHT_REGULAR = '400';
 export const FONT_WEIGHT_BOLD = '700';
@@ -29,11 +35,11 @@ export const LINE_HEIGHT_16 = scaleFont(16);
 
 // FONT STYLE
 export const FONT_REGULAR: TextStyle = {
-  fontFamily: FONT_ROBOTO,
+  fontFamily: POPPINS_REGULAR,
   fontWeight: FONT_WEIGHT_REGULAR,
 };
 
 export const FONT_BOLD: TextStyle = {
-  fontFamily: FONT_ROBOTO,
+  fontFamily: POPPINS_BOLD,
   fontWeight: FONT_WEIGHT_BOLD,
 };
