@@ -21,6 +21,8 @@ import {
   useClearByFocusCell,
   Cursor,
 } from 'react-native-confirmation-code-field';
+import {CodeVerifyNavigationProp} from '../../../navigatiors/navigation.type';
+import {ScreenNameEnum} from '../../../navigatiors/screen-name.enum';
 
 interface RootState {
   userInfo: UserInfoState;
@@ -39,9 +41,11 @@ const mapDispatch = {
 
 const connector = connect(mapState, mapDispatch);
 type PropsFromRedux = ConnectedProps<typeof connector>;
-type Prop = PropsFromRedux & {};
+type Prop = PropsFromRedux & {
+  navigation: CodeVerifyNavigationProp;
+};
 const CELL_COUNT = 6;
-function CodeVerifierScreen({userInfo}: Prop) {
+function CodeVerifierScreen({userInfo, navigation}: Prop) {
   const countries = JSON.parse(JSON.stringify(COUNTRY_LIST));
   countries.forEach((con: any) => {
     con.id = con.code;
@@ -53,6 +57,11 @@ function CodeVerifierScreen({userInfo}: Prop) {
     value,
     setValue,
   });
+
+  const handleVerifyCode = () => {
+    navigation.navigate(ScreenNameEnum.HomeChatScreen);
+  };
+
   return (
     <KeyboardAvoidingView behavior={'padding'} style={styles.container}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -119,6 +128,7 @@ function CodeVerifierScreen({userInfo}: Prop) {
             </View>
             <View style={styles.bottomButton}>
               <Button
+                onPress={handleVerifyCode}
                 primary
                 rounded
                 style={{

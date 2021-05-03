@@ -3,9 +3,10 @@ import React from 'react';
 import {connect, ConnectedProps} from 'react-redux';
 import {UserInfoState} from '../redux/types';
 import AppAuthenticationStack from './AppAuthenticationStack';
-import {Text, TouchableOpacity, View} from 'react-native';
-import {Button, Icon} from 'native-base';
+import {Platform, StatusBar, View} from 'react-native';
 import {SafeAreaView} from 'react-navigation';
+import {Colors} from '../shared/styles';
+import MainChatStack from './MainChatStack';
 
 interface RootState {
   userInfo: UserInfoState;
@@ -15,20 +16,28 @@ const mapState = (state: RootState) => ({
   userInfo: state.userInfo,
 });
 
-const connector = connect(mapState, null);
+const connector = connect(mapState, {});
 type PropsFromRedux = ConnectedProps<typeof connector>;
 type Prop = PropsFromRedux & {};
 
-function AppRootStack() {
+const HEADER_HEIGHT = Platform.OS === 'ios' ? 44 : 56;
+
+function AppRootStack({userInfo}: Prop) {
+  const isSignedIn = userInfo.isSignedIn;
   return (
-    <SafeAreaView style={{flex: 1}}>
-      {/*<View style={{paddingHorizontal: 10}}>*/}
-      {/*  <TouchableOpacity>*/}
-      {/*    <Icon type={'MaterialIcons'} name="arrow-back" />*/}
-      {/*  </TouchableOpacity>*/}
-      {/*</View>*/}
-      <AppAuthenticationStack />
-    </SafeAreaView>
+    <>
+      <View
+        style={{height: HEADER_HEIGHT, backgroundColor: Colors.HEADER_BLUE}}>
+        <StatusBar
+          translucent
+          backgroundColor="#5E8D48"
+          barStyle="light-content"
+        />
+      </View>
+      <SafeAreaView style={{flex: 1}}>
+        {isSignedIn ? <MainChatStack /> : <AppAuthenticationStack />}
+      </SafeAreaView>
+    </>
   );
 }
 

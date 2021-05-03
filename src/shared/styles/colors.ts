@@ -7,6 +7,7 @@ export const DARK_RED = '#D62554';
 export const ACTIVE_ITEM = '#4a4a4a';
 export const BLUE = '#3E70B7';
 export const ORANGE = '#F2673A';
+export const HEADER_BLUE = '#004092';
 // ACTIONS
 export const SUCCESS = '#3adb76';
 export const WARNING = '#ffae00';
@@ -22,6 +23,10 @@ export const MAIN_RED = '#D31145';
 export const MAIN_BACK_RED = '#b8123e';
 export const TEXT_VALUE_DARK = '#4c4c4c';
 export const TEXT_TITLE = '#554344';
+export const STORY_DASHED = '#FCB33D';
+export const TEXT_DARK = '#656565';
+export const USER_ACTIVE = '#29E1C2';
+export const USER_INACTIVE = '#858585';
 
 //CALENDAR COLORS
 export const HEADER_CALENDAR = '#f1e9dd';
