@@ -6,6 +6,8 @@ import HomeChat from '../containers/home-chat/home';
 import {Image, TouchableOpacity, View} from 'react-native';
 import AppText from '../shared/components/text-builder/AppText';
 import {Colors} from '../shared/styles';
+import SettingsScreen from '../containers/home-chat/screens/settings/settings-screen';
+import {Icon} from 'native-base';
 
 const Stack = createStackNavigator<Partial<MainChatNavigation>>();
 export default class MainChatStack extends React.Component {
@@ -15,8 +17,8 @@ export default class MainChatStack extends React.Component {
         <Stack.Screen
           name={ScreenNameEnum.HomeChatScreen}
           component={HomeChat}
-          options={{
-            title: 'Home',
+          options={({navigation, route}) => ({
+            title: 'Chat',
             headerShown: true,
             headerBackTitleStyle: {
               color: 'black',
@@ -31,6 +33,9 @@ export default class MainChatStack extends React.Component {
             headerLeft: (props: any) => {
               return (
                 <TouchableOpacity
+                  onPress={() =>
+                    navigation.navigate(ScreenNameEnum.SettingsScreen)
+                  }
                   style={{
                     flex: 1,
                     flexDirection: 'row',
@@ -74,6 +79,33 @@ export default class MainChatStack extends React.Component {
                     <Image source={require('assets/imgs/menu_solid.png')} />
                   </TouchableOpacity>
                 </View>
+              );
+            },
+          })}
+        />
+        <Stack.Screen
+          name={ScreenNameEnum.SettingsScreen}
+          component={SettingsScreen}
+          options={{
+            title: 'Settings',
+            headerShown: true,
+            headerBackTitleStyle: {
+              color: 'white',
+            },
+            headerTitleStyle: {
+              color: 'white',
+            },
+            headerStyle: {
+              height: 60,
+              backgroundColor: Colors.HEADER_BLUE,
+            },
+            headerBackImage: (props: any) => {
+              return (
+                <Icon
+                  type={'MaterialIcons'}
+                  name="arrow-back"
+                  style={{color: 'white', marginLeft: 10}}
+                />
               );
             },
           }}
