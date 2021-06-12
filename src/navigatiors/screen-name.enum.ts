@@ -3,4 +3,5 @@ export enum ScreenNameEnum {
   CodeVerifyScreen = 'CodeVerifyScreen',
   HomeChatScreen = 'HomeChatScreen',
   SettingsScreen = 'SettingsScreen',
+  MessageBox = 'MessageBox',
 }

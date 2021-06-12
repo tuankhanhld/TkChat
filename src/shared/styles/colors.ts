@@ -27,15 +27,8 @@ export const STORY_DASHED = '#FCB33D';
 export const TEXT_DARK = '#656565';
 export const USER_ACTIVE = '#29E1C2';
 export const USER_INACTIVE = '#858585';
-
-//CALENDAR COLORS
-export const HEADER_CALENDAR = '#f1e9dd';
-export const CALENDAR_TAB_ACTIVE = '#2e526c';
-export const CALENDAR_EVENT_ITEM = '#ffdbba';
-export const CALENDAR_VIEW_MORE_ITEM = '#2b8386';
-export const CALENDAR_HIGHT_LIGHT_DAY = '#a5edef';
-export const CALENDAR_CELL_BORDER = '#afb8b8';
-export const CALENDAR_TEXT_ACTIVE_DAY = '#117ed0';
+export const CHAT_BOX_DEFAULT = '#1A4076';
+export const CHAT_BOX_BUTTON = '#00B7FF';
 //BUTTON
 export const CANCEL_BTN = '#596c80';
 export const ACTIVE_BTN = '#D31145';

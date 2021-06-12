@@ -9,7 +9,7 @@ export type AuthNavigation = Pick<
 
 export type MainChatNavigation = Pick<
   AppRootNavigation,
-  'HomeChatScreen' | 'SettingsScreen'
+  'HomeChatScreen' | 'SettingsScreen' | 'MessageBox'
 >;
 
 // login screen stack type

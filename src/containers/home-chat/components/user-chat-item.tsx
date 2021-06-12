@@ -12,7 +12,9 @@ type Props = {
 export default function UserChatItem({quickViewInfo, onClick}: Props) {
   return (
     <View style={styles.itemContainer}>
-      <TouchableOpacity style={styles.itemInnerContainer}>
+      <TouchableOpacity
+        style={styles.itemInnerContainer}
+        onPress={() => onClick && onClick(quickViewInfo.userId)}>
         <View style={{padding: 5}}>
           <Image source={require('assets/imgs/avtar_story.png')} />
           <View style={styles.activeIconContainer}>
@@ -79,10 +81,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 10,
     backgroundColor: 'white',
-    shadowOffset: {width: 0, height: 6},
-    shadowColor: 'black',
-    shadowOpacity: 0.15,
-    elevation: 3,
   },
   timeContainer: {
     flex: 1,

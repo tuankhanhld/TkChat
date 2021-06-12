@@ -2,6 +2,8 @@ import React from 'react';
 import {ScrollView} from 'react-native';
 import UserChatItem from '../../components/user-chat-item';
 import {IQuitViewChat} from '../../../../core/models/iquit-view-chat.model';
+import {HomeChatNavigationProp} from '../../../../navigatiors/navigation.type';
+import {ScreenNameEnum} from '../../../../navigatiors/screen-name.enum';
 
 const quitViewInfo: IQuitViewChat[] = [
   {
@@ -69,11 +71,24 @@ const quitViewInfo: IQuitViewChat[] = [
   },
 ];
 
-export default function ChatList() {
+type Props = {
+  navigation: HomeChatNavigationProp;
+};
+
+export default function ChatList({navigation}: Props) {
+  const navigateToChat = () => {
+    navigation.navigate(ScreenNameEnum.MessageBox);
+  };
   return (
-    <ScrollView>
+    <ScrollView style={{marginTop: 10}}>
       {quitViewInfo.map((item) => {
-        return <UserChatItem key={item.userId} quickViewInfo={item} />;
+        return (
+          <UserChatItem
+            key={item.userId}
+            quickViewInfo={item}
+            onClick={navigateToChat}
+          />
+        );
       })}
     </ScrollView>
   );
